@@ -37,7 +37,7 @@ class ProductosResource(Resource):
             return {'error': 'Producto no encontrado'}, 404
 
     def obtener_productos_por_nombre(self, nombre):
-        if not current_user.is_authenticated or current_user.is_client():
+        if not current_user.is_authenticated or current_user.is_cliente():
             return {'error': 'No autorizado'}, 401
         productos = Productos.query.filter(Productos.nombre.ilike(f'%{nombre}%')).all()
         if productos:
@@ -67,7 +67,7 @@ class ProductosResource(Resource):
             return {'error': 'Producto no encontrado'}, 404
 
     def obtener_costo_producto_por_id(self, id):
-        if not current_user.is_authenticated or current_user.is_client():
+        if not current_user.is_authenticated or current_user.is_cliente():
             return {'error': 'No autorizado'}, 401
         producto = Productos.query.get(id)
         if producto:
