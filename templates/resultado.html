@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado</title>
+</head>
+<body>
+    <h1>Resultado de la autenticación</h1>
+    {% if exito %}
+        <p>Autenticación exitosa!</p>
+    {% else %}
+        <p>Autenticación fallida. Usuario y/o contraseña incorrectos. Por favor, intente nuevamente.</p>
+    {% endif %}
+    <a href="/login">Volver al inicio</a>
+</body>
+</html>

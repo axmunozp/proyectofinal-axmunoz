@@ -1,0 +1,15 @@
+{
+    "version": 2,
+    "builds": [
+        { "src": "app.py", "use": "@vercel/python" }
+    ],
+    "routes": [
+        { "src": "/(.*)", "dest": "app.py" }
+    ],
+    "env": {
+        "DB_USER":"root",
+        "DB_PASSWORD":"AbnPwUNgPRgPYjGHoZOSXSktPCgHNOxO",
+        "DB_HOST":"viaduct.proxy.rlwy.net:11502",
+        "DB_DATABASE":"railway"
+    }
+}
