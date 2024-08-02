@@ -8,8 +8,8 @@ class VentaResource(Resource):
         self.heladeria = Heladeria() 
 
     def post(self, id):
-        #if not current_user.is_authenticated:
-        #    return {'error': 'No autorizado'}, 401
+        if not current_user.is_authenticated:
+            return {'error': 'No autorizado'}, 401
         try:
             mensaje = self.heladeria.vender(id)
             return jsonify({'mensaje': mensaje})

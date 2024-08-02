@@ -75,8 +75,8 @@ class IngredientesResource(Resource):
 
 class AbastecerIngredienteResource(Resource):
     def put(self, id):
-        #if not current_user.is_authenticated or current_user.is_cliente():
-        #    return {'error': 'No autorizado'}, 401
+        if not current_user.is_authenticated or current_user.is_cliente():
+            return {'error': 'No autorizado'}, 401
         try:
             ingrediente = Ingredientes.query.get(id)
             if ingrediente:
@@ -90,8 +90,8 @@ class AbastecerIngredienteResource(Resource):
 
 class RenovarInventarioIngredienteResource(Resource):
     def put(self, id):
-        #if not current_user.is_authenticated or current_user.is_cliente():
-        #    return {'error': 'No autorizado'}, 401
+        if not current_user.is_authenticated or current_user.is_cliente():
+            return {'error': 'No autorizado'}, 401
         try:
             ingrediente = Ingredientes.query.get(id)
             if ingrediente:
